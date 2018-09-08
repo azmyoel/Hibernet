@@ -948,7 +948,6 @@ class RequestProxyHTTP(threading.Thread): # la classe del multithreading
 			try:
 				s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # ecco il nostro socket
 				s.connect((str(proxy[0]), int(proxy[1]))) # connessione al proxy
-				print ("Ana:"+request)
 				s.send(str.encode(request)) # encode in bytes della richiesta HTTP
 				print ("Request sent from " + str(proxy[0]+":"+proxy[1]) + " @", self.counter) # print delle richieste
 				try: # invia altre richieste nello stesso thread
